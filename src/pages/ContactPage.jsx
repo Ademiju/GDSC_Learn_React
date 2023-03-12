@@ -5,8 +5,11 @@ import "./contactpage.css";
 
 function ContactPage() {
   const [formStatus, setFormStatus] = useState("Send");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const onSubmit = (e) => {
-    setFormStatus("Submitting...");
+    e.preventDefault();
     const { name, email, message } = e.target.elements;
     let conFom = {
       name: name.value,
@@ -14,9 +17,13 @@ function ContactPage() {
       message: message.value,
     };
     console.log(conFom);
-    setTimeout(onSubmit, 5000);
-    alert("Message Successfully Sent");
-    setFormStatus("Send");
+    setFormStatus("Submitting...");
+    setTimeout(() => {
+      setFormStatus("Send");
+      setName("");
+      setEmail("");
+      setMessage("");
+    }, 3000);
   };
   return (
     <Card>
@@ -28,13 +35,27 @@ function ContactPage() {
             <label className="form-label" htmlFor="name">
               Name
             </label>
-            <input className="form-control" type="text" id="name" required />
+            <input
+              className="form-control"
+              type="text"
+              id="name"
+              required
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
           </div>
           <div className="email">
             <label className="form-label" htmlFor="email">
               Email
             </label>
-            <input className="form-control" type="email" id="email" required />
+            <input
+              className="form-control"
+              type="email"
+              id="email"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
           </div>
           <div className="text-area">
             <label className="form-label" htmlFor="message">
@@ -46,15 +67,21 @@ function ContactPage() {
               required
               minLength={10}
               maxLength={150}
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
             />
           </div>
-          <button className="btn" type="submit">
+          <button className="button" type="submit">
             {formStatus}
           </button>
         </form>
 
         <p>
-          <a href="https://ademiju-taiwo.netlify.app/" target={"_blank"}>
+          <a
+            href="https://ademiju-taiwo.netlify.app/"
+            target={"_blank"}
+            rel="noreferrer"
+          >
             My Portfolio
           </a>
         </p>

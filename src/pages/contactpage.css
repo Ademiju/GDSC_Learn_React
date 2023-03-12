@@ -33,7 +33,7 @@
     height: 100px;
   }
 
-  .btn{
+  .button{
     color: black;
     margin:15px 0 45px;
     font-size: large;
@@ -47,7 +47,7 @@
   .text-area textarea:hover{
     border:solid 1px #60bfee;
   }
-  .btn:hover{
+  .button:hover{
     background-color: #42b87f;
     color: aliceblue;
   }
