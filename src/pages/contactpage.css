@@ -1,0 +1,57 @@
+.contact-me{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    font-size: larger;
+    
+   
+  }
+
+  .name{
+    display: flex;
+    flex-direction: column;
+  }
+  .name input{
+    border: solid 1px grey;
+    border-radius: 5px;
+    height: 40px;
+  }
+  .email input{
+    border: solid 1px grey;
+    border-radius: 5px;
+    height: 40px;
+  }
+  .email{
+    display: flex;
+    flex-direction: column;
+  }
+  .text-area{
+    display: flex;
+    flex-direction: column;
+  }
+  textarea{
+    height: 100px;
+  }
+
+  .btn{
+    color: black;
+    margin:15px 0 45px;
+    font-size: large;
+  }
+  .name input:hover {
+    border:solid 1px #60bfee;
+  }
+  .email input:hover{
+    border:solid 1px #60bfee;
+  }
+  .text-area textarea:hover{
+    border:solid 1px #60bfee;
+  }
+  .btn:hover{
+    background-color: #42b87f;
+    color: aliceblue;
+  }
+  .contact-me p{
+    font-size: small;
+  }
+  
